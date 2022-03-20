@@ -1,12 +1,12 @@
 package com.bridgelabz;
 
 public class LL {
-	Node head;
+	Node head = new Node(70);
 	
 	static int size;
 
 	LL() {
-		this.size = 0;
+		this.size = 1;
 	}
 
 	public void addFirst(int data) {
@@ -86,14 +86,11 @@ public class LL {
 		return size;
 	}
 	public void printList() {
-		head = new Node(56);
 		if (head == null) {
 			System.out.println("List is empty.");
 			return;
 		}
-		Node currNode =head;
-        currNode.next = new Node(30);
-		currNode.next.next = new Node(70);
+		Node currNode = head;
 		while (currNode != null) {
 			System.out.print(currNode.data + "  ");
 			currNode = currNode.next;
