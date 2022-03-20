@@ -1,12 +1,12 @@
 package com.bridgelabz;
 
 public class LL {
-	Node head = new Node(56);
+	Node head;
 	
 	static int size;
 
 	LL() {
-		this.size = 1;
+		this.size = 0;
 	}
 
 	public void addFirst(int data) {
