@@ -7,8 +7,8 @@ public class Main {
 	
 	public static void main(String[] args) {
 		LL list =new LL();
-		list.addFirst(30);
-		list.addFirst(56);
+		list.addLast(30);
+		list.addLast(70);
 		list.printList();
 		System.out.println(list.getSize());
 	}

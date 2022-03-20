@@ -1,7 +1,7 @@
 package com.bridgelabz;
 
 public class LL {
-	Node head = new Node(70);
+	Node head = new Node(56);
 	
 	static int size;
 
