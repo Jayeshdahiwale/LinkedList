@@ -5,9 +5,9 @@ public class LL {
 	
 	static int size;
 
-	LL() {
-		this.size = 0;
-	}
+//	LL() {
+//		this.size = 0;
+//	}
 
 	public void addFirst(int data) {
 		Node newNode = new Node(data);
@@ -58,21 +58,17 @@ public class LL {
 		currNode.next = null;
 	}
 	public void insertBetween(int element1,int element2, int data) {
-		if(head == null || head.next ==null) {
-			System.out.println("List contain only one element. So data can't be inserted between one number.");
+		if(head == null || head.next == null) {
+			//System.out.println("List contain only one element. So data can't be inserted between one number.");
 			return;
 		}
+		
 		Node currNode = head;
 		while(currNode.data != element1 || currNode.next.data != element2) {
-			if(currNode.next == null) {
-				System.out.println("Consecutive pair is not in the list");
+			if(currNode.next.next == null) {
 				break;
 			}
 			currNode = currNode.next;
-			if(currNode.next == null) {
-				System.out.println("Consecutive pair is not in the list");
-				break;
-			}
 		}
 		if(currNode.data == element1 && currNode.next.data == element2) {
 			Node newNode =new Node(data);
@@ -81,8 +77,10 @@ public class LL {
 			newNode.next =temp;
 		}
 		
+		
 	}
 	public int getSize() {
+		System.out.println();
 		return size;
 	}
 	public void printList() {
@@ -95,6 +93,6 @@ public class LL {
 			System.out.print(currNode.data + "  ");
 			currNode = currNode.next;
 		}
-		System.out.println("Null");
+		//System.out.println("Null");
 	}
 }
