@@ -2,7 +2,7 @@ package com.bridgelabz;
 
 public class LL {
 	Node head;
-	
+
 	static int size;
 
 //	LL() {
@@ -57,46 +57,77 @@ public class LL {
 		}
 		currNode.next = null;
 	}
-	public void insertBetween(int element1,int element2, int data) {
-		if(head == null || head.next == null) {
-			//System.out.println("List contain only one element. So data can't be inserted between one number.");
+	
+	public void delete(int data) {
+		if(search(data)) {
+			size--;
+			if(head.data == data) {
+				head = null;
+			}
+			Node currNode = head;
+			while(currNode.next.data != data) {
+				currNode = currNode.next;
+			}
+			Node temp = currNode.next.next;
+			currNode.next = temp;
+			
+		}
+	}
+
+	public void insertAfter(int element, int data) {
+		Node currNode = head;
+		if (search(element)) {
+			while (currNode.data != element) {
+				currNode = currNode.next;
+			}
+			Node node1 = new Node(data);
+			Node temp = currNode.next;
+			currNode.next = node1;
+			node1.next = temp;
+		}
+	}
+
+	public void insertBetween(int element1, int element2, int data) {
+		if (head == null || head.next == null) {
+			// System.out.println("List contain only one element. So data can't be inserted
+			// between one number.");
 			return;
 		}
-		
+
 		Node currNode = head;
-		while(currNode.data != element1 || currNode.next.data != element2) {
-			if(currNode.next.next == null) {
+		while (currNode.data != element1 || currNode.next.data != element2) {
+			if (currNode.next.next == null) {
 				break;
 			}
 			currNode = currNode.next;
 		}
-		if(currNode.data == element1 && currNode.next.data == element2) {
-			Node newNode =new Node(data);
+		if (currNode.data == element1 && currNode.next.data == element2) {
+			Node newNode = new Node(data);
 			Node temp = currNode.next;
 			currNode.next = newNode;
-			newNode.next =temp;
+			newNode.next = temp;
 		}
-		
-		
 	}
-	
+
 	public boolean search(int data) {
-		if(head == null) {
+		if (head == null) {
 			return false;
 		}
 		Node currNode = head;
-		while(currNode.data != data) {
-			if(currNode.next == null) {
+		while (currNode.data != data) {
+			if (currNode.next == null) {
 				return false;
 			}
 			currNode = currNode.next;
 		}
 		return true;
 	}
+
 	public int getSize() {
 		System.out.println();
 		return size;
 	}
+
 	public void printList() {
 		if (head == null) {
 			System.out.println("List is empty.");
@@ -107,6 +138,6 @@ public class LL {
 			System.out.print(currNode.data + "  ");
 			currNode = currNode.next;
 		}
-		//System.out.println("Null");
+		// System.out.println("Null");
 	}
 }
