@@ -14,7 +14,7 @@ public class Main {
 		list.insertAfter(90, 100);
 		list.delete(56);
 		list.insertBetween(70, 80, 30);//Inserting 30 between 56 & 70
-		//list.deleteLast();
+		list.ascOrder();
 		list.printList();
 		System.out.println(list.search(100));
 		System.out.println(list.getSize());
