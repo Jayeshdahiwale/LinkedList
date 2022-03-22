@@ -12,7 +12,7 @@ public class Main {
 		list.addLast(80);
 		list.addLast(90);
 		list.insertAfter(90, 100);
-		list.delete(100);
+		list.delete(56);
 		list.insertBetween(70, 80, 30);//Inserting 30 between 56 & 70
 		//list.deleteLast();
 		list.printList();

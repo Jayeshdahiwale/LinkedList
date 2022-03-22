@@ -62,7 +62,8 @@ public class LL {
 		if(search(data)) {
 			size--;
 			if(head.data == data) {
-				head = null;
+				head = head.next;
+				return;
 			}
 			Node currNode = head;
 			while(currNode.next.data != data) {
