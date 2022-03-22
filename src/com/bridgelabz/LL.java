@@ -109,6 +109,27 @@ public class LL {
 			newNode.next = temp;
 		}
 	}
+	
+	public void ascOrder() {
+		if(head == null) {
+			return;
+		}
+		int exchanged =1;
+		while(exchanged != 0) {
+			Node currNode = head;
+			exchanged = 0;
+			while(currNode.next != null) {
+				if(currNode.data > currNode.next.data) {
+					int temp =currNode.next.data;
+					currNode.next.data = currNode.data;
+					currNode.data = temp;
+		            exchanged++;   
+				}
+				currNode = currNode.next;
+			}
+			
+		}
+	}
 
 	public boolean search(int data) {
 		if (head == null) {
