@@ -15,6 +15,7 @@ public class Main {
 		list.insertBetween(70, 80, 30);//Inserting 30 between 56 & 70
 		//list.deleteLast();
 		list.printList();
+		System.out.println(list.search(30));
 		System.out.println(list.getSize());
 	}
 }

@@ -79,6 +79,20 @@ public class LL {
 		
 		
 	}
+	
+	public boolean search(int data) {
+		if(head == null) {
+			return false;
+		}
+		Node currNode = head;
+		while(currNode.data != data) {
+			if(currNode.next == null) {
+				return false;
+			}
+			currNode = currNode.next;
+		}
+		return true;
+	}
 	public int getSize() {
 		System.out.println();
 		return size;
